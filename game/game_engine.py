@@ -3,9 +3,9 @@ from deck import Deck
 from rules import Rules
 
 class Game:
-    def __init__(self):
+    def __init__(self, num_players=4):
         self.deck = Deck()
-        self.players = {0: [], 1: []}  # 0 = human, 1 = bot
+        self.players = {0: [], 1: [],2: [], 3:[]}  # 0 = human, 1 = bot
         self.current_player = 0
         self.direction = 1
         self.played_cards = []
@@ -104,7 +104,7 @@ class Game:
 
 # Example Usage
 if __name__ == "__main__":
-    game = Game()
+    game = Game(num_players=4)
     print("Initial Player Hands:", game.get_game_state())
     # game.played_cards.append(game.deck.draw_card())  used it for just testing something
     print("Top Card:", game.played_cards[-1], game.played_cards)
